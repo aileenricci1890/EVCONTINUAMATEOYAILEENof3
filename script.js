@@ -1,14 +1,17 @@
-// CARRITO FUNCIONAL - VERSIÓN COMPLETA Y PROBADA
+// CARRITO FUNCIONAL - VERSIÓN MEJORADA CON DETECCIÓN AUTOMÁTICA
 document.addEventListener("DOMContentLoaded", function() {
     console.log("✅ Página cargada - Iniciando carrito");
     
-    // 1. CREAR OVERLAY DEL CARRITO SI NO EXISTE
+    // 1. CORREGIR ENLACE DEL CARRITO SI ESTÁ MAL
+    corregirEnlaceCarrito();
+    
+    // 2. CREAR OVERLAY DEL CARRITO SI NO EXISTE
     crearOverlayCarrito();
     
-    // 2. CONFIGURAR CONTADOR
+    // 3. CONFIGURAR CONTADOR
     const carritoLink = document.getElementById('carrito-link');
     if (carritoLink) {
-        console.log("✅ Enlace del carrito encontrado");
+        console.log("✅ Enlace del carrito encontrado y corregido");
         
         // Asegurar posición relativa
         carritoLink.style.position = 'relative';
@@ -43,9 +46,11 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log("🛒 Click en carrito detectado");
             abrirCarrito();
         });
+    } else {
+        console.error("❌ ERROR: No se encontró el enlace del carrito");
     }
     
-    // 3. CONFIGURAR BOTONES AGREGAR AL CARRITO
+    // 4. CONFIGURAR BOTONES AGREGAR AL CARRITO
     const botonesAgregar = document.querySelectorAll('.agregar-carrito');
     console.log(`✅ ${botonesAgregar.length} botones de agregar encontrados`);
     
@@ -61,9 +66,19 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
     
-    // 4. ACTUALIZAR CONTADOR INICIAL
+    // 5. ACTUALIZAR CONTADOR INICIAL
     actualizarContador();
 });
+
+// FUNCIÓN PARA CORREGIR EL ENLACE DEL CARRITO
+function corregirEnlaceCarrito() {
+    const carritoLink = document.getElementById('carrito-link');
+    if (carritoLink && carritoLink.getAttribute('href') !== '#') {
+        console.log("🔧 Corrigiendo enlace del carrito...");
+        carritoLink.setAttribute('href', '#');
+        console.log("✅ Enlace corregido a '#'");
+    }
+}
 
 // FUNCIÓN PARA CREAR EL OVERLAY DEL CARRITO
 function crearOverlayCarrito() {
