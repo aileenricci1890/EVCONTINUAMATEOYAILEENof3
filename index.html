@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urban sport | Ropa Deportiva</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Urban<span>Sport</span></div>
+    <nav class="nav">
+      <ul>
+        <li><a href="para-el.html">Para Él</a></li>
+        <li><a href="para-ella.html">Para Ella</a></li>
+        <li><a href="para-lo-peques.html">Para los Pequeños</a></li>
+        <li><a href="carrito-fix.html" id="carrito-link">🛒 Carrito</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Estilo que se mueve contigo</h1>
+      <p>Ropa deportiva urbana para cada ritmo de vida.</p>
+      <a href="para-el.html" class="btn">Explorar colección</a>
+    </section>
+
+    <section class="categorias">
+      <h2>Categorías</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="https://i.pinimg.com/736x/94/59/63/9459639bed1ff2006b03e1580eab0a40.jpg" alt="Ropa deportiva para hombres">
+          <h3>Para Él</h3>
+          <a href="para-el.html" class="btn-card">Ver más</a>
+        </article>
+        <article class="card">
+          <img src="https://i.pinimg.com/1200x/8f/06/7b/8f067b5c47ba7fc4167ec1d2f6755f07.jpg" alt="Ropa deportiva para mujeres">
+          <h3>Para Ella</h3>
+          <a href="para-ella.html" class="btn-card">Ver más</a>
+        </article>
+        <article class="card">
+          <img src="https://i.pinimg.com/736x/84/d0/01/84d00187bfbd39fd46ab466e42d555d7.jpg" alt="Ropa deportiva para niños">
+          <h3>Para los Pequeños</h3>
+          <a href="para-lo-peques.html" class="btn-card">Ver más</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Urban sport | Todos los derechos reservados</p>
+    <div class="social">
+      <a href="https://www.instagram.com/?hl=es">Instagram</a> | 
+      <a href="https://www.facebook.com/">Facebook</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- CARRITO OVERLAY - PEGA ESTO ANTES DEL </body> -->
+<div id="carrito-overlay">
+    <div class="carrito-content">
+        <h2>🛒 Tu Carrito de Compras</h2>
+        <div id="lista-carrito"></div>
+        <div id="total-carrito"></div>
+        <div class="carrito-botones">
+            <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+            <button onclick="cerrarCarrito()">Cerrar</button>
+        </div>
+    </div>
+</div>
+
+<!-- TOAST PARA MENSAJES -->
+<div id="toast-mensaje"></div>
+<!-- CARRITO OVERLAY - PEGAR ANTES DEL </body> -->
+<div id="carrito-overlay">
+    <div class="carrito-content">
+        <h2>🛒 Tu Carrito de Compras</h2>
+        <div id="lista-carrito"></div>
+        <div id="total-carrito">Total: Bs 0.00</div>
+        <div class="carrito-botones">
+            <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+            <button onclick="cerrarCarrito()">Cerrar</button>
+        </div>
+    </div>
+</div>
+
+<!-- TOAST MENSAJES -->
+<div id="toast-mensaje"></div>
+</body>
+</html>
